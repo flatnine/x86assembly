@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+
+- hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+  - name: install base requirements
+    apt:
+      name: '{{ item }}'
+    loop:
+    - binutils
+    - make
